@@ -35,11 +35,33 @@ def main():
 
     wallet = getPaid(wallet)
 
-    print("You now have " + str(wallet) + " dollars.")
+    print("You now have " + str(wallet) + " gold.")
 
     input("Press enter to travel into the forest...")
 
-    print("You travel deeper into the forest, leaving your burning town behind.
+    print ()
+
+    print("You travel deeper into the forest, leaving your burning town behind. As you travel, you wander across one of your neighbors. 'Thank godness it is " + name + "!', they exclaim. They offer you 10 coins in exchange for helping them gather food. You agree, and become 10 coins richer.")
+
+    wallet = getPaid(wallet)
+
+    print ("You now have " +str(wallet) + " gold.")
+
+    input("Press enter to continue on...")
+
+    print ()
+
+    print ("You eventually make your way out of the deep forest to be met by a crude gravel road. You travel down the road away from your destroyed home, and eventually come across a lone figure. He is wearing the armor of the northerners which attacked your home. In a fit of rage, you rush him and throw a punch, which somehow luckily connects with a vital organ, killing him instantly. You loot his body, taking what money he had on him.")
+
+    wallet = getPaid(wallet)
+
+    print ("You now have " +str(wallet) + " gold.")
+
+    print ()
+
+    print ("After a long day of traveling, you lay down your head and rest. Who knows what lay ahead of you?")
+
+    print ("To be continued...")           
 main()
 
 
