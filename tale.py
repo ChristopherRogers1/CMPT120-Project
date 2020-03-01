@@ -1,3 +1,5 @@
+#Christopher Rogers, Intro to Programming game
+
 def visitLocale(locale, score, prompt):
     print(locale)
     print("Score: ", score)
