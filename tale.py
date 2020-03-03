@@ -1,5 +1,13 @@
 #Christopher Rogers, Intro to Programming game
 
+areaList = ["You awake to a fire! Your home is burning down! In a panic, you run to the exit, leaving behind all of your money and belongings. The town is being pillaged by the badguyians to the west! Run for your life! Which direction do you go?", 
+                "You travel deeper into the forest, leaving your burning town behind. As you travel, you wander across one of your neighbors. 'Thank godness it's you!', they exclaim. They offer you 10 coins in exchange for helping them gather food. You agree, and become 10 coins richer.",
+                "You eventually make your way out of the deep forest to be met by a crude gravel road. You travel down the road away from your destroyed home, and eventually come across a lone figure. He is wearing the armor of the northerners which attacked your home. In a fit of rage, you rush him and throw a punch, which somehow luckily connects with a vital organ, killing him instantly. You loot his body, taking what money he had on him.",
+                "You make it to a large field, with rolling hills as far as the eye can see. You climb one of the hills, only to figure out that it was an illusion and the hills end there.",
+                "You come across a great castle. You approach the entrance, only to find out that it is the fortress of the badguyians! You hide in a nearby bush, and run away when you think nobody is looking.",
+                "You return to your burning town. The attackers seem to have left, and did not leave much of anything still standing."]
+
+
 def visitLocale(locale, score, prompt):
     print(locale)
     print("Score: ", score)
@@ -42,12 +50,6 @@ def startGame():
 
 def gameLoop(location, money, coord1, coord2):
     #coord1 = x, coord2 = y
-    areaList = ["You awake to a fire! Your home is burning down! In a panic, you run to the exit, leaving behind all of your money and belongings. The town is being pillaged by the badguyians to the north! You run to the east, towards the woods. Once you arrive, you find a crisp ten dollar coin. Sweet!", 
-                "You travel deeper into the forest, leaving your burning town behind. As you travel, you wander across one of your neighbors. 'Thank godness it's you!', they exclaim. They offer you 10 coins in exchange for helping them gather food. You agree, and become 10 coins richer.",
-                "You eventually make your way out of the deep forest to be met by a crude gravel road. You travel down the road away from your destroyed home, and eventually come across a lone figure. He is wearing the armor of the northerners which attacked your home. In a fit of rage, you rush him and throw a punch, which somehow luckily connects with a vital organ, killing him instantly. You loot his body, taking what money he had on him.",
-                "You make it to a large field, with rolling hills as far as the eye can see. You climb one of the hills, only to figure out that it was an illusion and the hills end there.",
-                "You come across a great castle. You approach the entrance, only to find out that it is the fortress of the badguyians! You hide in a nearby bush, and run away when you think nobody is looking.",
-                "You return to your burning town. The attackers seem to have left, and did not leave much of anything still standing."]
     currentLocation = location
     
     printInfo(location, money)
@@ -92,13 +94,6 @@ def gameLoop(location, money, coord1, coord2):
             print("Invalid command, try again")
 
 def main():
-
-    areaList = ["You awake to a fire! Your home is burning down! In a panic, you run to the exit, leaving behind all of your money and belongings. The town is being pillaged by the badguyians to the north! You run to the east, towards the woods. Once you arrive, you find a crisp ten dollar coin. Sweet!", 
-                "You travel deeper into the forest, leaving your burning town behind. As you travel, you wander across one of your neighbors. 'Thank godness it's you!', they exclaim. They offer you 10 coins in exchange for helping them gather food. You agree, and become 10 coins richer.",
-                "You eventually make your way out of the deep forest to be met by a crude gravel road. You travel down the road away from your destroyed home, and eventually come across a lone figure. He is wearing the armor of the northerners which attacked your home. In a fit of rage, you rush him and throw a punch, which somehow luckily connects with a vital organ, killing him instantly. You loot his body, taking what money he had on him.",
-                "You make it to a large field, with rolling hills as far as the eye can see. You climb one of the hills, only to figure out that it was an illusion and the hills end there.",
-                "You come across a great castle. You approach the entrance, only to find out that it is the fortress of the badguyians! You hide in a nearby bush, and run away when you think nobody is looking.",
-                "You return to your burning town. The attackers seem to have left, and did not leave much of anything still standing."]
 
     prompt = "Press enter to continue."
         
