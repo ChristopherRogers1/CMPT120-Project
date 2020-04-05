@@ -7,6 +7,9 @@ areaList = ["You awake to a fire! Your home is burning down! In a panic, you run
                 "You come across a great castle. You approach the entrance, only to find out that it is the fortress of the badguyians! You hide in a nearby bush, and run away when you think nobody is looking.",
                 "You return to your burning town. The attackers seem to have left, and did not leave much of anything still standing."]
 
+areaNames = ["Home Town", "Forest", "Gravel Road", "Fields", "Enemy Castle", "Destroyed Home Town"]
+
+visited = [False, False, False, False, False, False]
 
 def visitLocale(locale, score, prompt):
     print(locale)
@@ -54,7 +57,7 @@ def gameLoop(location, money, coord1, coord2):
     
     printInfo(location, money)
 
-    
+    visited[0] = True
     
     while (1):
         command = input("Enter a command (North, South, East, West, Help, and Quit): ")
@@ -62,30 +65,38 @@ def gameLoop(location, money, coord1, coord2):
             if (coord1!=0 or coord2 == 1):
                 print("You cannot travel this way.")
             elif (coord2+1==0):
-                return areaList[5], coord1, coord2 + 1;
+                print ("\n" + areaNames[5])
+                return areaList[5], coord1, coord2 + 1, 5;
             else:
-                return areaList[1], coord1, coord2 + 1;
+                print ("\n" + areaNames[1])
+                return areaList[1], coord1, coord2 + 1, 1;
         elif (command.lower() == "south"):
             if (coord1!=0 or coord2 == -1):
                 print("You cannot travel this way.")
             elif (coord2-1==0):
-                return areaList[5], coord1, coord2 - 1;
+                print ("\n" + areaNames[5])
+                return areaList[5], coord1, coord2 - 1, 5;
             else:
-                return areaList[3], coord1, coord2 - 1;
+                print ("\n" + areaNames[3])
+                return areaList[3], coord1, coord2 - 1, 3;
         elif (command.lower() == "east"):
             if (coord2!=0 or coord1 == 1):
                 print("You cannot travel this way.")
             elif (coord1+1==0):
-                return areaList[5], coord1 + 1, coord2;
+                print ("\n" + areaNames[5])
+                return areaList[5], coord1 + 1, coord2, 5;
             else:
-                return areaList[2], coord1 + 1, coord2;
+                print ("\n" + areaNames[2])
+                return areaList[2], coord1 + 1, coord2, 2;
         elif (command.lower() == "west"):
             if (coord2!=0 or coord1 == -1):
                 print("You cannot travel this way.")
             elif (coord1-1==0):
-                return areaList[5], coord1 - 1, coord2;
+                print ("\n" + areaNames[5])
+                return areaList[5], coord1 - 1, coord2, 5;
             else:
-                return areaList[4], coord1 - 1, coord2;
+                print ("\n" + areaNames[4])
+                return areaList[4], coord1 - 1, coord2, 4;
         elif (command.lower() == "help"):
             print("Valid commands include North, South, East, West, Help, and Quit.")
         elif (command.lower() == "quit"):
@@ -100,18 +111,25 @@ def main():
     name, home, job = startGame()
     
     wallet = 0
-
+    
+    moves = 0
+    
     current = areaList[0]
 
-    newLocation, coord1, coord2 = gameLoop(areaList[0], wallet, 0, 0)
-
-    print()
-
+    newLocation, coord1, coord2, locInt = gameLoop(areaList[0], wallet, 0, 0)
     
     while (newLocation != "done"):
-        wallet = getPaid(wallet)
-        newLocation, coord1, coord2 = gameLoop(newLocation, wallet, coord1, coord2)
+        if (visited[locInt]) == False:
+            wallet = getPaid(wallet)
+            visited[locInt] = True
+        moves += 1
+        if moves == 10:
+            print("Move limit of ten has been reached.")
+            break
+        print("Moves made: " + str(moves) + "\n")
+        newLocation, coord1, coord2, locInt = gameLoop(newLocation, wallet, coord1, coord2)
         print()
+        
 
     
     
