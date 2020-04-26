@@ -1,6 +1,6 @@
 def main():
     
-    print("Input Filename (do not include .txt): ")
+    print("Input text file name (do not include .txt): ")
     
     fileName = input("") + ".txt"
 
@@ -16,9 +16,6 @@ def main():
             else:
                 dictionary[temp] = line.rstrip("\n")
             counter += 1    
-
-    for x in dictionary:
-        print(x)
 
     while (repeat == 1):
         
